@@ -4,37 +4,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-    class Node {
-        private int[] state; //[0] stores column location and [1] stores row location
-        private Node parent;
-        private String action;
-        private int pathCost;
-
-        Node(Node parent, int[] state, String action, int pathCost){
-                this.parent = parent;
-                this.state = state;
-                this.action = action;
-                this.pathCost = pathCost;        
-        }
-
-        public Node childNode(Problem problem, Node parent, String action){
-            return new Node(parent, problem.result(parent.state, action), action, 
-            (parent.pathCost + problem.stepCost(parent.state, action)));
-        }
-
-        public int[] getState(){
-            return this.state;
-        }
-
-        public Node solution(Node node){ //Return the sequence of actions obtained by following parent pointers back to the root
-            if (node.parent == null){ //Check if node is root
-                return null;
-            }
-            System.out.print(node.parent.action + "\n");
-            return solution(node.parent);
-        }
-    }
-
     public class Problem {
         public int[][] map;
         public int initialState;
@@ -116,7 +85,7 @@ import java.util.Scanner;
                     }
                     return parentState;
                 case "Right":
-                    if (column < map[0].length){
+                    if (column < map[0].length-1){
                         if (map[column+1][row] != wall){
                             result[0] = column + 1;
                             result[1] = row;
@@ -134,7 +103,7 @@ import java.util.Scanner;
                     }
                     return parentState;
                 case "Down":
-                    if (row < map.length){
+                    if (row < map.length-1){
                         if (map[column][row+1] != wall){
                             result[0] = column;
                             result[1] = row + 1;
