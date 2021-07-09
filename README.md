@@ -15,5 +15,5 @@ I used the **Breadth First** for the agent’s search through the map. There wer
 1- The algorithm is fairly simple and easy to implement.
 2- As the shortest path is the most desired for this scenario, we want to find the goal state in the shallowest node in the graph. 
 The breakdown of the breadth First algorithm is shown in the following figure:
-![alt text](https://github.com/arielwsc/AI/blob/master/BreadthFirstImg.jpg?raw=true)
+![alt text](https://github.com/arielwsc/AI-ML/blob/AI/BreadthFirstImg.jpg?raw=true)
 The shallowest nodes are explored first before expanding further to the next level. When the goal state is reached, the search stops and return the actions that followed to find this goal node.
