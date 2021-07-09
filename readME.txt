@@ -7,4 +7,4 @@ regression or classification class to save as much memory as
 possible without enumerating every single state
 
 ** To run: **
-python BayeasianLearning.py <train-file> <test-file>
+python BayesianLearning.py <train-file> <test-file>
